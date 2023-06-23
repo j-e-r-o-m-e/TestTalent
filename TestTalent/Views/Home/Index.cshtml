@@ -1,0 +1,25 @@
+﻿@model List<TestTalent.Models.Utilistaeur>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div>
+     <table>
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>email</th>
+    <th>Actions</th>
+  </tr>
+  @foreach (Utilistaeur utilisateur in Model)
+        {
+            <tr>
+                <td>@utilisateur.Nom</td>
+                <td>@utilisateur.Prenom</td>
+                <td>@utilisateur.Email</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = utilisateur.Id })</td>
+            </tr>
+        }
+</table> 
+</div>
